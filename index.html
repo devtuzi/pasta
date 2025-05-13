@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Portifólio Matheus</title>
 </head>
+
 <body>
+
+    <div class="particulas">
+
+    </div>
+
+
     <nav class="navegacao">
         <ul class="menu">
 
@@ -22,9 +30,9 @@
     </nav>
 
     <main id="inicio" class="cabecalho">
-            <img class="foto-perfil" src="./img/eu.jpg" alt="foto.matheus">
-            <h1>Matheus Ribeiro</h1>
-            <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+        <img class="foto-perfil" src="./img/eu.jpg" alt="foto.matheus">
+        <h1>Matheus Ribeiro</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
     </main>
 
     <section id="sobre" class="sobre">
@@ -32,8 +40,9 @@
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">
                 Sou desenvolvedor Front-end com experiência em React, JavaScript,
-                HTML e CSS, dedicado à criação de interfaces modernas, responsivas e com foco na melhor experiência do usuário.
-                Tenho como objetivo desenvolver soluções eficientes e visualmente atrativas, 
+                HTML e CSS, dedicado à criação de interfaces modernas, responsivas e com foco na melhor experiência do
+                usuário.
+                Tenho como objetivo desenvolver soluções eficientes e visualmente atrativas,
                 aliando boas práticas de desenvolvimento com atenção aos detalhes.
             </p>
         </div>
@@ -45,36 +54,36 @@
 
             <div class="projetos-card">
                 <img src="./img/sitio.png" alt="sitio" alt="Projeto 1" class="projetos-imagem">
-                
+
                 <div class="caixa-textos-projeto">
-                <h3 class="info-projetos">SITIO DO DINDO</h3>
-                <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Provident id nihil soluta impedit illo cumque sequi veniam laborum ex explicabo, 
-                    hic commodi delectus eum dolore nobis error fugiat repudiandae minus.</p>
+                    <h3 class="info-projetos">SITIO DO DINDO</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Provident id nihil soluta impedit illo cumque sequi veniam laborum ex explicabo,
+                        hic commodi delectus eum dolore nobis error fugiat repudiandae minus.</p>
                 </div>
 
             </div>
 
             <div class="projetos-card">
                 <img src="./img/previsao.png" alt="previsão" alt="Projeto 1" class="projetos-imagem">
-                
+
                 <div class="caixa-textos-projeto">
-                <h3 class="info-projetos">PREVISÃO DO TEMPO</h3>
-                <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Provident id nihil soluta impedit illo cumque sequi veniam laborum ex explicabo, 
-                    hic commodi delectus eum dolore nobis error fugiat repudiandae minus.</p>
+                    <h3 class="info-projetos">PREVISÃO DO TEMPO</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Provident id nihil soluta impedit illo cumque sequi veniam laborum ex explicabo,
+                        hic commodi delectus eum dolore nobis error fugiat repudiandae minus.</p>
                 </div>
 
             </div>
 
             <div class="projetos-card">
                 <img src="./img/advogado.png" alt="advogado" alt="Projeto 1" class="projetos-imagem">
-                
+
                 <div class="caixa-textos-projeto">
-                <h3 class="info-projetos">ADVOGADO</h3>
-                <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Provident id nihil soluta impedit illo cumque sequi veniam laborum ex explicabo, 
-                    hic commodi delectus eum dolore nobis error fugiat repudiandae minus.</p>
+                    <h3 class="info-projetos">ADVOGADO</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Provident id nihil soluta impedit illo cumque sequi veniam laborum ex explicabo,
+                        hic commodi delectus eum dolore nobis error fugiat repudiandae minus.</p>
                 </div>
 
             </div>
@@ -85,20 +94,38 @@
 
     <section id="contatos" class="contatos">
         <h2 class="contatos-titulo">Entre em Contato</h2>
-        
-        <form class="formulario-contato" id="formulario">
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
             <div class="grupo-form">
-                <input class="campo-form" placeholder="Nome">
+                <input class="campo-form" placeholder="Nome" id="nome">
             </div>
 
             <div class="grupo-form">
-            <textarea class="campo-form" placeholder="Digite sua mensagem"></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" id="mensagem"></textarea>
             </div>
 
             <button type="submit" class="botao-form">Enviar Whatsapp</button>
         </form>
-    
+
     </section>
 
+    <script>
+
+        function enviarWhats(event) {
+            event.preventDefault()
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5551983176689'
+
+            const texto = `Oi! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://whatsa.me/${telefone}/?t=${msgFormatada}`
+
+            window.open(url, '_blanc')
+        }
+
+    </script>
 </body>
+
 </html>
