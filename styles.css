@@ -10,13 +10,14 @@ html {
 }
 
 :root {
-    --primaria: #4f46e5;
-    --secundaria: #7c3aed;
-    --escuro: #0f172a;
-    --maisEscuro: #0a0f1c;
-    --claro: #e2e8f0;
-    --vidro: rgba(255, 255, 255, 0.1);
+    --primaria: #1e3a5f;      
+    --secundaria: #8c735b;     
+    --escuro: #121417;         
+    --maisEscuro: #0a0c0f;     
+    --claro: #f0f2f5;          
+    --vidro: rgba(255, 255, 255, 0.05); 
 }
+
 
 body {
     background-color: var(--escuro);
@@ -79,7 +80,7 @@ body {
 
 h1 {
     font-size: 3.5rem;
-    color: var(--primaria);
+    color: var(--claro);
     font-weight: bold;
     margin: 5px;
 }
@@ -127,7 +128,7 @@ h1 {
 }
 
 .projetos-card{
-    background: rgba(8, 5, 41, 0.979);
+    background: var(--primaria);
     border-radius: 16px;
     backdrop-filter: blur(5px);
     border: 1px solid var(vidro);
@@ -162,7 +163,7 @@ h1 {
 }
 
 .paragrafo-projetos {
-    color: rgba(226, 232, 240, 0.8);
+    color: whitesmoke;
     line-height: 1.25rem;
 }
 
@@ -189,7 +190,7 @@ h1 {
 .campo-form {
     width: 100%;
     padding: 1rem;
-    background: rgba(8, 5, 41, 0.979);
+    background: var(--primaria);
     border-radius: 8px;
     color: var(--claro);
     border: 1px solid var(--vidro);
