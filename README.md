@@ -1,2 +1,2 @@
 # Portfólio - utilizando HTML, CSS e javascript.
-https://devtuzi.web.app/
+devtuzi.web.app
